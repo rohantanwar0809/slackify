@@ -40,8 +40,6 @@ const SignUpCard: React.FC<SignUpCardProps> = ({ setSignInFlow }) => {
     setPending(true);
     signIn("password", { name: fullName, email, password, flow: "signUp" })
       .catch((err) => {
-        console.log("Error", err);
-
         setError("Invalid credentials");
         setPending(false);
       })
