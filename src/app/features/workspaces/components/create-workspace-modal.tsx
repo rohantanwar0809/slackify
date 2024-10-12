@@ -38,7 +38,7 @@ export const CreateWorkspaceModal = () => {
         },
         {
           onSuccess: (data) => {
-            router.push(`/workspaces/${data}`);
+            router.push(`/workspace/${data}`);
           },
         }
       );

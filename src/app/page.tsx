@@ -25,7 +25,6 @@ export default function Home() {
 
   return (
     <div>
-      Logged in
       <UserButton />
     </div>
   );
