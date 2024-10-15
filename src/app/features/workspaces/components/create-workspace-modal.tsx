@@ -21,8 +21,7 @@ export const CreateWorkspaceModal = () => {
   const [name, setName] = useState("");
   const router = useRouter();
 
-  const { mutate, data, error, isPending, isError, isSettled } =
-    useCreateWorkspace();
+  const { mutate, data, isPending, isError, isSettled } = useCreateWorkspace();
 
   const handleClose = () => {
     setOpen(false);
@@ -39,6 +38,7 @@ export const CreateWorkspaceModal = () => {
         {
           onSuccess: (data) => {
             router.push(`/workspace/${data}`);
+            handleClose();
           },
         }
       );
@@ -68,7 +68,7 @@ export const CreateWorkspaceModal = () => {
             placeholder="Workspace name e.g 'Work','Personal', 'Home'"
           />
           <div className="flex justify-end">
-            <Button type="submit" disabled={false}>
+            <Button type="submit" disabled={isPending}>
               Create
             </Button>
           </div>
