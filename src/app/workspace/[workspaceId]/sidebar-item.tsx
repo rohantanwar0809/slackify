@@ -43,7 +43,7 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
       className={cn(sidebarItemVariants({ variant }))}
     >
       <Link href={`/workspace/${workspaceId}/channel/${id}`}>
-        <Icon />
+        <Icon className="size-4 mr-1 shrink-0 truncate" />
         <span>{label}</span>
       </Link>
     </Button>
