@@ -10,6 +10,7 @@ import {
 import { useAuthActions } from "@convex-dev/auth/react";
 import { Loader, LogOut } from "lucide-react";
 import { useCurrentUser } from "../api/use-current-user";
+import { avatarBgColor, cn } from "@/lib/utils";
 
 export const UserButton = () => {
   const { signOut } = useAuthActions();
@@ -30,9 +31,14 @@ export const UserButton = () => {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger className="outline-none relative">
-        <Avatar className="size-10 hover:opacity-75 transition">
+        <Avatar className="rounded-md size-10 hover:opacity-75 transition">
           <AvatarImage src={image} alt={name} />
-          <AvatarFallback className="bg-emerald-500 text-white">
+          <AvatarFallback
+            className={cn(
+              "rounded-md text-white",
+              avatarBgColor(avatarFallback)
+            )}
+          >
             {avatarFallback}
           </AvatarFallback>
         </Avatar>
